@@ -25,5 +25,12 @@ window.onload = function() {
 function pickUpItem(hero,weapon) {
     var newLength = hero.inventory.push(weapon);
 }
-
-module.exports = {hero,rest,reset,pickUpItem,equipWeapon};
+function equipWeapon(hero) {
+    let i = hero.inventory.length;
+    if(i >= 1) {
+        return hero.weapon = hero.inventory[0];
+    } else {
+        window.close();
+    }
+}
+module.exports = {hero,rest,pickUpItem,equipWeapon};
