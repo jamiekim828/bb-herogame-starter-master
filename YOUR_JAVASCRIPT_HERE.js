@@ -1,11 +1,11 @@
 // Write your JS here
 var hero = {
-    name: 'Genie',
+    name: 'Wonder Woman',
     heroic: true,
     inventory: [],
     health: 10,
     weapon : {
-        type: 'Lamp',
+        type: 'Shield',
         damage: 2
     }
 }
@@ -23,7 +23,13 @@ window.onload = function() {
     }
 }
 function pickUpItem(hero,weapon) {
-    var newLength = hero.inventory.push(weapon);
+    return hero.inventory.push(weapon);
+}
+window.onload = function() {
+    document.getElementById("dagger").onclick = function add() {
+        let weapon = {type: 'dagger', damage: 2};
+        pickUpItem(hero,weapon);
+    }
 }
 function equipWeapon(hero) {
     let i = hero.inventory.length;
@@ -33,4 +39,10 @@ function equipWeapon(hero) {
         window.close();
     }
 }
-module.exports = {hero,rest,pickUpItem,equipWeapon};
+window.onload = function() {
+    document.getElementById("bag").onclick = function equip() {
+      return equipWeapon(hero);
+    }
+}
+document.getElementById('log').innerHTML += '<br>Your new hero!';
+module.exports = {hero,rest,pickUpIteme,quipWeapon};
