@@ -17,19 +17,8 @@ function rest(hero) {
     }
     return hero;
 }
-window.onload = function() {
-    document.getElementById("inn").onclick = function reset() {
-        rest(hero);
-    }
-}
 function pickUpItem(hero,weapon) {
     return hero.inventory.push(weapon);
-}
-window.onload = function() {
-    document.getElementById("dagger").onclick = function add() {
-        let weapon = {type: 'dagger', damage: 2};
-        pickUpItem(hero,weapon);
-    }
 }
 function equipWeapon(hero) {
     let i = hero.inventory.length;
@@ -40,9 +29,16 @@ function equipWeapon(hero) {
     }
 }
 window.onload = function() {
+    document.getElementById("inn").onclick = function reset() {
+        rest(hero);
+    }
+    document.getElementById("dagger").onclick = function add() {
+        let weapon = {type: 'dagger', damage: 2};
+        pickUpItem(hero,weapon);
+    }
     document.getElementById("bag").onclick = function equip() {
-      return equipWeapon(hero);
+        return equipWeapon(hero);
     }
 }
-document.getElementById('log').innerHTML += '<br>Your new hero!';
+document.getElementById('log').innerHTML += '<br>Play with your hero!!!';
 module.exports = {hero,rest,pickUpIteme,quipWeapon};
