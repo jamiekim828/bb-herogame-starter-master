@@ -1,0 +1,5 @@
+@import "lib/mocha.css";
+
+#inn, #dagger, #bag {
+    width: 200px;
+}

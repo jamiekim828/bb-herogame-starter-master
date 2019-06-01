@@ -11,7 +11,7 @@ var hero = {
 }
 function rest(hero) {
     if (hero.health === 10) {
-        window.alert('You are strong enough!');
+        window.alert('You are strong enough! Start fighting!');
     } else {
         hero.health = 10;
     }
